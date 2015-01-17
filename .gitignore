@@ -14,6 +14,11 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
+# Hashicorp files
+*.box
+*.iso
+packer_cache
+
 # Windows shortcuts
 *.lnk
 
