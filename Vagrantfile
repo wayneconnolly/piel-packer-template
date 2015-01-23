@@ -14,6 +14,8 @@
 # Resume vagrant  "vagrant resume" NOTE : You must do a reload to access shared folders
 # Reload vagrant  "vagrant reload" NOTE : This does not re-provision chef only 'vagrant up' does that. Kill the chef-client in ps.
 # Destroy vagrant "vagrant destroy -f"
+# SSH into box "vagrant ssh" or use your own client with the vagrant User/Pass below
+# Vagrant User/Pass : vagrant/vagrant
 # Mysql User/Pass :  root/vagrant
 
 #       _______. _______ .___________. __    __  .______   
