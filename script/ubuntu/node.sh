@@ -8,17 +8,16 @@
 
 
 #clone the repo
-mkdir //var/node
-cd //var/node
-git clone https://github.com/joyent/node.git .
-cd node
+mkdir //var/
+cd //var/
+git clone https://github.com/iojs/io.js.git .
 
 #switch to the v0.11.14-release branch (you're currently on the head which at the time fo writting is v0.13-pre)
-git checkout v0.11.14-release
+# git checkout v0.11.14-release
 
 #pull that release, reset the head to that release (this will be fast)
 git pull
-git reset HEAD --hard
+#git reset HEAD --hard
 
 #compile and go.
 sudo ./configure
