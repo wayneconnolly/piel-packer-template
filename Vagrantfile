@@ -39,10 +39,6 @@ CPUS     = '2'
 #     \    / /  _____  \ |  |__| | |  |\  \----./  _____  \  |  |\   |     |  |     
 #      \__/ /__/     \__\ \______| | _| `._____/__/     \__\ |__| \__|     |__|     
 #                                                                                   
-# Our script to do some housework
-$script = <<SCRIPT
-# Do custom Stuff here
-SCRIPT
 
 Vagrant.configure(2) do |config|
    config.vm.box = HOSTNAME
@@ -54,11 +50,10 @@ Vagrant.configure(2) do |config|
     end
     config.vm.synced_folder "./www", "/var/www", owner: "www-data", group: "www-data"
     config.vm.synced_folder "./piel", "/var/piel", owner: "www-data", group: "www-data"
-    config.vm.network "public_network", bridge: 'wlan0', ip: MYIP
+    #config.vm.network "public_network", bridge: 'wlan0', ip: MYIP
+    config.vm.network "private_network", :type => 'dhcp', :name => 'vboxnet0', :adapter => 2
     config.ssh.forward_agent = true
     config.vm.network "forwarded_port", guest: 3306, host: 33306
-    config.vm.provision "shell", inline: $script, privileged: true, run: "once"
-
 end
 
 
