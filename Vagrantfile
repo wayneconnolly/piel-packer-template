@@ -26,13 +26,25 @@
 #  |_______/    |_______|    |__|      \______/  | _|      
 #                                                          
 
-BOXNAME  = 'piel.box' #<---------------- change this to the box file.
-HOSTNAME = 'piel-dev-brennorris' #<-------------- change this to the host name, if replacing this with an updgrade, you MUST perform "vagrant box remove piel-dev-brennorris" to remove the existing box from the catalogue.
-MYIP     = '192.168.2.2' #<--------- your INTERNAL IP ( vagrant will set your metal as x.x.x.1, so dont use that', here I have my metal as 192.168.2.1 and 192.168.2.2 for the guest.
-MYNETWORKIP = '192.168.0.60' #<----------- you EXTERNAL IP, this is the IP of your LAN to reside on.
+#The name of your vagrant box file name
+BOXNAME  = 'piel.box'
+
+#The host name to use, READ!!!!: if you've used this hostname before and you're perform an upgrade you should perform;
+#vagrant box remove piel-dev-brennorris to remove this host from the vagrant catalogue
+HOSTNAME = 'piel-dev-brennorris'
+
+#you will receive an internal network, this is the IP address for the box on this network; do NOT use x.x.x.1 as the host (your metal) will get that IP address thus;
+#( your metal/host 192.168.2.1 ) <-> ( this vm/guest 192.168.2.2 )
+MYIP     = '192.168.2.2'
+
+#your external IP, a static IP address for the vm/guest on the physical network (which your internet router is connected to )
+MYNETWORKIP = '192.168.0.60'
+
 MEMORY   = '2048'
 CPUS     = '2'
-ADAPTER = 'eth0' #wlan0 <- if you're using wifi, this is the the network metal, the name of the network interface to connect MYNETWORKIP to.
+
+#The name of your physical network interface card for adapater 2 (the internet) ; for wifi it is most common to have 'wlan0' , for ethernet 'eth0'.
+ADAPTER = 'eth0'
 
 #  ____    ____  ___       _______ .______          ___      .__   __. .___________.
 #  \   \  /   / /   \     /  _____||   _  \        /   \     |  \ |  | |           |
