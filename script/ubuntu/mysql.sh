@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Install debconf-utils
-apt-get install debconf-utils
+apt-get -y install debconf-utils
 # Set the root passwords for mysql
 
 #debconf-set-selections <<< 'mysql-server mysql-server/root_password password vagrant'

@@ -8,8 +8,8 @@
 
 
 #clone the repo
-mkdir //var/
-cd //var/
+mkdir //var/iojs
+cd //var/iojs
 git clone https://github.com/iojs/io.js.git .
 
 #switch to the v0.11.14-release branch (you're currently on the head which at the time fo writting is v0.13-pre)
