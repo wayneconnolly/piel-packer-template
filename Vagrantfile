@@ -26,11 +26,13 @@
 #  |_______/    |_______|    |__|      \______/  | _|      
 #                                                          
 
-BOXNAME  = 'ubuntu-14.04.1.amd64.virtualbox.box'
-HOSTNAME = 'piel-dev-waynec'
-MYIP     = '192.168.0.117'
-MEMORY   = '1024'
+BOXNAME  = 'piel.box' #<---------------- change this to the box file.
+HOSTNAME = 'piel-dev-brennorris' #<-------------- change this to the host name, if replacing this with an updgrade, you MUST perform "vagrant box remove piel-dev-brennorris" to remove the existing box from the catalogue.
+MYIP     = '192.168.2.2' #<--------- your INTERNAL IP ( vagrant will set your metal as x.x.x.1, so dont use that', here I have my metal as 192.168.2.1 and 192.168.2.2 for the guest.
+MYNETWORKIP = '192.168.0.60' #<----------- you EXTERNAL IP, this is the IP of your LAN to reside on.
+MEMORY   = '2048'
 CPUS     = '2'
+ADAPTER = 'eth0' #wlan0 <- if you're using wifi, this is the the network metal, the name of the network interface to connect MYNETWORKIP to.
 
 #  ____    ____  ___       _______ .______          ___      .__   __. .___________.
 #  \   \  /   / /   \     /  _____||   _  \        /   \     |  \ |  | |           |
@@ -50,10 +52,9 @@ Vagrant.configure(2) do |config|
     end
     config.vm.synced_folder "./www", "/var/www", owner: "www-data", group: "www-data"
     config.vm.synced_folder "./piel", "/var/piel", owner: "www-data", group: "www-data"
-    #config.vm.network "public_network", bridge: 'wlan0', ip: MYIP
-    config.vm.network "private_network", :type => 'dhcp', :name => 'vboxnet0', :adapter => 2
+    config.vm.network "public_network", bridge: ADAPTER, ip: MYNETWORKIP
+    config.vm.network "private_network", :ip => MYIP, :name => 'pielinternal', :adapter => 2
     config.ssh.forward_agent = true
     config.vm.network "forwarded_port", guest: 3306, host: 33306
 end
-
 
