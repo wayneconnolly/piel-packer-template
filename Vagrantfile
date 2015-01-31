@@ -26,7 +26,7 @@
 #  |_______/    |_______|    |__|      \______/  | _|      
 #                                                          
 
-BOXNAME  = 'ubuntu-14.04.amd64.virtualbox.box'
+BOXNAME  = 'ubuntu-14.04.1.amd64.virtualbox.box'
 HOSTNAME = 'piel-dev-waynec'
 MYIP     = '192.168.0.117'
 MEMORY   = '1024'
