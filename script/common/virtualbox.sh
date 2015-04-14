@@ -1,5 +1,5 @@
 #!/bin/sh
-apt-get -y install virtualbox-guest-utils
+sudo apt-get -y install virtualbox-guest-dkms virtualbox-guest-utils
 mkdir -p /mnt/virtualbox
 mount -o loop /home/vagrant/VBoxGuest*.iso /mnt/virtualbox
 sh /mnt/virtualbox/VBoxLinuxAdditions.run
