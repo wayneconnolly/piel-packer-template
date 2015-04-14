@@ -48,7 +48,7 @@
 						"../script/common/motd.sh",
 						"../script/ubuntu/mysql.sh",
 						"../script/ubuntu/apache.sh",
-						"../script/ubuntu/node.sh",
+						"../script/ubuntu/iojs.sh",
 						"../script/ubuntu/cleanup.sh"
 					]
 				}
