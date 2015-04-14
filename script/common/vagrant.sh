@@ -1,5 +1,5 @@
 #!/bin/sh
-
+sudo apt-get install virtualbox-guest-dkms
 # Store build time
 date > /etc/vagrant_box_build_time
 
