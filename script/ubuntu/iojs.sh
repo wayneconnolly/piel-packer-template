@@ -28,8 +28,8 @@ sudo make install
 # and when done we can checkout to any version, release.
 
 # Install some helpful things for node
-npm install -g grunt-cli
-npm install -g bower
-npm install -g nodeunit
-
+#npm install -g grunt-cli
+#npm install -g bower
+#npm install -g nodeunit
+sudo npm install -g gulp
 
