@@ -7,6 +7,10 @@
 #                                                         
 # If you create and destroy your vagrant machine then you may want to delete the hosts value to enable ssh
 # ssh-keygen -f "~/.ssh/known_hosts" -R 192.168.0.117
+# Destroy your old machine
+# vagrant destroy
+# vagrant box remove piel-dev-waynec <!---- removes the box from the catalogue.
+# vagrant up
 # Test if your passwordless ssh works 
 # svn ls svn+ssh://first_last@svn.piel.io/var/svn/piel-site/trunk
 # Startup vagrant "vagrant up"
