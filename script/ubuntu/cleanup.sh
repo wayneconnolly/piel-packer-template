@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Clean up
-apt-get -y remove dkms
+#apt-get -y remove dkms
 apt-get -y autoremove
 apt-get -y clean
 

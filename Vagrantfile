@@ -31,11 +31,11 @@
 #                                                          
 
 #The name of your vagrant box file name
-BOXNAME  = 'piel.box'
+BOXNAME  = 'build/ubuntu-14.04.amd64.virtualbox.box'
 
 #The host name to use, READ!!!!: if you've used this hostname before and you're perform an upgrade you should perform;
 #vagrant box remove piel-dev-brennorris to remove this host from the vagrant catalogue
-HOSTNAME = 'piel-dev-brennorris'
+HOSTNAME = 'piel-dev'
 
 #you will receive an internal network, this is the IP address for the box on this network; do NOT use x.x.x.1 as the host (your metal) will get that IP address thus;
 #( your metal/host 192.168.2.1 ) <-> ( this vm/guest 192.168.2.2 )
